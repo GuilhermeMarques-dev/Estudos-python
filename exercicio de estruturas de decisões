@@ -1,0 +1,59 @@
+print("Bem vindo ao supermercado Tabajara!")
+print("1- file duplo (Até 5KG - Preço = 4,90KG) (Mais de 5KG - Preço = 5,80kg)")
+print("2- Alcatra (Até 5KG - Preço = 5,90KG) (Mais de 5KG - Preço = 6,80kg)")
+print("3- Picanha (Até 5KG - Preço = 6,90KG) (Mais de 5KG - Preço = 7,80kg)")
+
+tipo = int(input("Digite a carne que desejará levar:\n"))
+
+quantidade = float(input("Digite a quantidade de carne que deseja levar:\n"))
+
+if (tipo == 1):
+    carne_nome = "file duplo"
+    if (quantidade > 5):
+        valor = 5.80
+    else:
+        valor = 4.90
+
+elif (tipo == 2):
+    carne_nome = "Alcatra"
+    if (quantidade > 5):
+        valor = 6.80
+    else:
+        valor = 5.90
+
+
+elif (tipo == 3):
+    carne_nome = "Picanha"
+    if (quantidade > 5):
+        valor = 7.80
+    else:
+        valor = 6.90
+
+else:
+    print("Tipo invalido!")
+    exit()
+
+
+
+precof = valor*quantidade
+
+print("Vamos para o pagamento!")
+cartao = input("A compra foi feita com o cartão tabajara?(S/N)").lower()
+
+if cartao == 's':
+    print("Desconto aplicado!")
+    precof = precof*0.95
+    cartao_tabajara = True
+else:
+    cartao_tabajara = False
+    print("Voce não recebera desconto.")
+
+
+print("Gerando cupom fiscal....\n")
+print("Indormações da compra:\n")
+
+print(f"tipo da carne:{carne_nome}")
+print(f"Quantidade: {quantidade}")
+print(f"Preço por kg: {valor:.2f}")
+print(f"Foi pago no cartao? {cartao_tabajara}")
+print(f"preco total: {precof:.2f} ")
